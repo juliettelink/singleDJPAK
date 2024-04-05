@@ -9,7 +9,7 @@ require_once __DIR__. "/templates/header.php";
 
 
 $singles = getAllSingles($pdo);
-var_dump($singles);
+
 ?>
 
 <h1 class="py-3">Listes des singles</h1>
@@ -37,7 +37,7 @@ var_dump($singles);
         <td><?= $single["title"] ?></td>
         <td><?= $single["duration"] ?></td>
         <td><?= $single["description"] ?></td>
-        <td><img src="<?= "../assets/images/". $single["image"] ?>" alt="image single" width="30" height="30"></td>
+        <td><img src="<?= _SINGLES_IMAGES_FOLDER_ . $single['image'] ?>" alt="<?= $single['title'] ?>" width="30"></td>
         <td>
             <a href="single.php?id=<?=$single['id']?>" class="btn btn-outline-success">Modifier</a>
             <a href="single_delete.php?id=<?=$single['id']?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce single')">Supprimer</a>
