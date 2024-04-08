@@ -9,7 +9,7 @@
         <?php if (isset($_SESSION["user"])) : ?>
             <a href="logout.php" class="nav-link">Déconnexion</a>
         <?php else : ?>
-            <a href="admin/index.php" class="nav-link">Espace Pro</a>
+            <a href="login.php" class="nav-link">Espace Pro</a>
         <?php endif; ?>
     </div>
 

@@ -6,7 +6,7 @@ require_once __DIR__. "/../lib/pdo.php";
 require_once __DIR__. "/../lib/single.php";
 require_once __DIR__. "/templates/header.php";
 
-
+adminOnly();
 
 $singles = getAllSingles($pdo);
 
