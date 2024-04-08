@@ -1,9 +1,18 @@
 <?php 
 
+//fonction pour le formulaire de contact avec les modèles de voitures
+function getSinglesModels(PDO $pdo): array
+{
+    $sql = "SELECT DISTINCT title FROM sing";
+    $query = $pdo->query($sql);
+    $models = $query->fetchAll(PDO::FETCH_COLUMN);
+    return $models;
+}
+
 
 function getAllSingles(PDO $pdo):array
 {
-    $sql = "SELECT * FROM sing";
+    $sql = "SELECT * FROM sing ORDER BY id ASC";
     $query = $pdo->prepare($sql);
     $query->execute();
     $singles = $query->fetchAll(PDO::FETCH_ASSOC);

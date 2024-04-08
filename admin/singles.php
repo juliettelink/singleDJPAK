@@ -1,5 +1,5 @@
 <?php 
-require_once __DIR__. "/../lib/config.php";
+require_once __DIR__. "/../config.php";
 require_once __DIR__. "/../lib/session.php";
 
 require_once __DIR__. "/../lib/pdo.php";
@@ -27,6 +27,7 @@ $singles = getAllSingles($pdo);
         <th scope="col">Durée</th>
         <th scope="col">Description</th>
         <th scope="col">Image</th>
+        <th scope="col">Audio</th>
         <th scope="col">Action</th>
         </tr>
     </thead>
@@ -37,7 +38,13 @@ $singles = getAllSingles($pdo);
         <td><?= $single["title"] ?></td>
         <td><?= $single["duration"] ?></td>
         <td><?= $single["description"] ?></td>
-        <td><img src="<?= _SINGLES_IMAGES_FOLDER_ . $single['image'] ?>" alt="<?= $single['title'] ?>" width="30"></td>
+        <td><img src="../uploads/singles/<?= $single['image'] ?>" alt="<?= $single['title'] ?>" width="50"></td>
+        <td>
+            <audio controls>
+                <source src="../assets/music/<?= $single['audio'] ?>" type="audio/mpeg">
+                    Votre navigateur ne supporte pas l'audio HTML5.
+            </audio>
+        </td>
         <td>
             <a href="single.php?id=<?=$single['id']?>" class="btn btn-outline-success">Modifier</a>
             <a href="single_delete.php?id=<?=$single['id']?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce single')">Supprimer</a>

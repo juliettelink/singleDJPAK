@@ -2,13 +2,14 @@
 body{
     margin: 0;
     background-color:transparent;
-    color: #eee;
+    /* color: #eee; */
     font-family: Poppins;
     font-size: 12px;
 }
 a{
     text-decoration: none;
 }
+
 header{
     width: 1140px;
     max-width: 80%;
@@ -23,7 +24,57 @@ header a{
     color: #eee;
     margin-right: 40px;
 }
+
+/* navbar */
+
+.container {
+    background-color: transparent !important;
+
+}
+
+/* Adjust z-index to make navbar appear above other elements */
+.navbar {
+    z-index: 1000;
+    position: relative;
+    background-color: transparent !important; /* Fond transparent */
+    
+    
+}
+
+.nav-item:not(.active) .nav-link {
+    /* border: 1px solid white; Ajoute une bordure blanche */
+    color: black; 
+
+   
+}
+
+
+
+
+#play-pause {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Rendre le bouton rond */
+    padding: 10px; /* Ajuster le padding pour le rendre plus visible */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s; /* Animation de transition */
+    width: 40px; /* Ajustez la largeur du bouton */
+    height: 40px; /* Ajustez la hauteur du bouton pour correspondre à la largeur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#play-pause:hover {
+    background-color: #333333; /* Légère modification de la couleur au survol */
+}
+
+
 /* carousel */
+
 .carousel{
     height: 100vh;
     margin-top: -50px;
@@ -58,15 +109,13 @@ header a{
     font-weight: bold;
     letter-spacing: 10px;
 }
-.carousel .list .item .title,
-.carousel .list .item .topic{
+.carousel .list .item .title
+{
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
 }
-.carousel .list .item .topic{
-    color: #f1683a;
-}
+
 .carousel .list .item .buttons {
     display: flex;
     justify-content: center; /* Horizontally center the content */
@@ -180,7 +229,6 @@ header a{
 
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
 .carousel .list .item:nth-child(1) .content .des,
 .carousel .list .item:nth-child(1) .content .buttons
 {
@@ -200,9 +248,7 @@ header a{
 .carousel .list .item:nth-child(1) .content .title{
     animation-delay: 1.2s!important;
 }
-.carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1.4s!important;
-}
+
 .carousel .list .item:nth-child(1) .content .des{
     animation-delay: 1.6s!important;
 }
@@ -259,7 +305,7 @@ header a{
     z-index: 1000;
     width: 0%;
     height: 3px;
-    background-color: #f1683a;
+    
     left: 0;
     top: 0;
 }
@@ -328,4 +374,18 @@ header a{
     .carousel .list .item .content .title{
         font-size: 30px;
     }
+}
+
+.carousel-caption h3, p{
+    color: #000; 
+}
+
+/* notation par les étoiles*/
+
+.form-group{
+    margin-top: 40px;
+}
+
+.la-star {
+    font-size: xx-large;
 }
