@@ -4,7 +4,7 @@
     require_once __DIR__ . "/../lib/pdo.php";
     require_once __DIR__ ."/templates/header.php";
 
-//employeAndAdmin();
+employeAndAdmin();
 ?>
 <div class="text-center">
     <a href="../index.php" type="button" class="btn btn-outline-primary  col-8 " alt="retour au site">Retour sur le site</a>

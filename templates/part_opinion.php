@@ -1,6 +1,6 @@
 
 <div class="carousel-item">
-    <svg class="bd-placeholder-img" width="100%" height="25%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#F5EFE6"></rect></svg>
+    <svg class="bd-placeholder-img" width="100%" height="25%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#FFFFFF"></rect></svg>
     <div class="container">
         <div class="carousel-caption">
             <p><?=htmlentities($opinion["comment"])?></p>

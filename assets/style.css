@@ -48,7 +48,12 @@ header a{
    
 }
 
-
+/* Styles pour le rectangle orange dans le menu */
+.nav-item.active .nav-link {
+            /* background-color: orange; */
+            color: rgb(56, 54, 54);  /* Couleur du texte */
+            
+}
 
 
 #play-pause {

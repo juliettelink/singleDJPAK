@@ -3,11 +3,13 @@ require_once __DIR__ . "/config.php";
 require_once __DIR__ . "/lib/session.php";
 require_once __DIR__ . "/lib/pdo.php";
 require_once __DIR__ . "/lib/single.php";
+require_once __DIR__ . "/lib/opinion.php";
 
 
 require_once __DIR__ . "/templates/header.php";
 
 $singles = getAllSingles($pdo);
+$recentOpinion = getRecentOpinions($pdo);
 ?>
 
 <!-- carousel -->
@@ -31,6 +33,32 @@ $singles = getAllSingles($pdo);
     <!-- time running -->
     <div class="time"></div>
 </div>
+
+<!-- Avis -->
+
+<div class="">
+    <div id="myCarousel" class="carousel slide mt-5" data-bs-ride="carousel" style="height: 20vh;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="25%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#FFFFFF"></rect></svg>
+                <div class="carousel-caption">
+                    <h3>Les Avis</h3>
+                    <p>Lisez les avis clients et mettez votre ressenti</p>
+                </div>
+            </div>
+            <?php foreach ($recentOpinion as $key => $opinion) : ?>
+                <?php require __DIR__ . "/templates/part_opinion.php"; ?>
+            <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
 
 
