@@ -58,7 +58,7 @@ if (isset($_SESSION['error_message'])) {
 $csrfToken = bin2hex(random_bytes(32));
 $_SESSION['csrf_token'] = $csrfToken;
 ?>
-<div class="music">
+<div class="fond">
 <div class="container">
     <h1> Formulaire de contact </h1>
     <p> Nous prenons le temps de vous lire et de vous répondre dans les meilleurs delais. </p>

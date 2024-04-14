@@ -43,7 +43,7 @@ if (isset($_SESSION['success_message'])) {
     unset($_SESSION['success_message']); // Supprime le message de succès 
 }
 ?>
-<div class="music">
+<div class="fond">
     <div class="container">
         <h1>Vos Avis</h1>
         <div class="row">

@@ -15,12 +15,12 @@ require_once __DIR__ . "/templates/header.php";
 $singles = getAllSingles($pdo);
 
 ?>
-<div class="music">
+<div class="fond">
     <div class="container">
         <h1 class="py-3">Venez écouter mes nouveautés</h1>
 
         <div class="table-responsive">
-            <table class="table table-secondary">
+            <table class="table table-transparent">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center">Titre</th>
@@ -42,7 +42,7 @@ $singles = getAllSingles($pdo);
                             </audio>
                         </td>
                         <td class="text-center"> <!-- Ajoutez une cellule pour le lien de téléchargement -->
-                            <a href="assets/music/<?= $single['audio'] ?>" download="<?= $single['title'] ?>" class="text-dark">Télécharger</a>
+                            <a href="assets/music/<?= $single['audio'] ?>" download="<?= $single['title'] ?>" class=" btn btn-dark text-white">Télécharger</a>
                         </td>
                     </tr>
                     <?php } ?>

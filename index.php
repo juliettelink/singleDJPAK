@@ -50,13 +50,11 @@ $recentOpinion = getRecentOpinions($pdo);
                 <?php require __DIR__ . "/templates/part_opinion.php"; ?>
             <?php endforeach; ?>
         </div>
-        <button class="carousel-control-prev btn-dark" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>  
         </button>
-        <button class="carousel-control-next btn-dark" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="color: black;"></span>  
         </button>
     </div>
 
