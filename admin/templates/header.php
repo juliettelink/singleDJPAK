@@ -13,7 +13,7 @@
     <title>Espace Pro DJPak</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> 
     <link rel="stylesheet" href="../assets/css/styles.css">
     
 </head>
@@ -22,7 +22,7 @@
 <?php 
 $mainmenu =[
     'inscription.php'=>['label'=> 'Création de compte', 'icon'=>'fa-arrow-right-to-bracket'],
-    'singles.php' => ['label' => 'Musique', 'icon' => 'fa-car'],
+    'singles.php' => ['label' => 'Musique', 'icon' => 'fa-music'],
     'opinions.php' => ['label' => 'Avis', 'icon' => 'fa-pen-to-square'],
     'forms.php' => ['label' => 'Messages Clients', 'icon' => 'fa-message'],
     '../logout.php'=>  ['label' => 'Déconnexion', 'icon' => 'fa-sign-out']

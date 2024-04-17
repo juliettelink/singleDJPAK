@@ -52,13 +52,13 @@ function deleteSingles(PDO $pdo, int $id):bool
     }
 }
 
-function saveSingles(PDO $pdo, string $title, string $duration, string $description, string|null $image, int $id = null): bool
+function saveSingles(PDO $pdo, string $title, string $duration, string $description, string|null $image, string $audio, int $id = null): bool
 {
     if ($id === null) {
-        $query = $pdo->prepare("INSERT INTO sing (title, duration, description, image) VALUES(:title, :duration, :description, :image)");
+        $query = $pdo->prepare("INSERT INTO sing (title, duration, description, image, audio) VALUES(:title, :duration, :description, :image, :audio)");
     } else {
         
-        $query = $pdo->prepare("UPDATE `sing` SET `title` = :title, `duration`= :duration, `description` = :description, image= :image WHERE `id` = :id;");
+        $query = $pdo->prepare("UPDATE `sing` SET `title` = :title, `duration`= :duration, `description` = :description, image= :image, audio= :audio WHERE `id` = :id;");
         $query->bindValue(':id', $id, PDO::PARAM_INT);
     }
 
@@ -66,5 +66,6 @@ function saveSingles(PDO $pdo, string $title, string $duration, string $descript
     $query->bindValue(':duration', $duration, PDO::PARAM_STR);
     $query->bindValue(':description', $description, PDO::PARAM_STR);
     $query->bindValue(':image',$image, $pdo::PARAM_STR);
+    $query->bindValue(':audio',$audio, $pdo::PARAM_STR);
     return $query->execute();  
 }

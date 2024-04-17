@@ -51,10 +51,10 @@ $recentOpinion = getRecentOpinions($pdo);
             <?php endforeach; ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>  
+            <i class="fa-solid fa-chevron-left"></i>  
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true" style="color: black;"></span>  
+            <i class="fa-solid fa-chevron-right"></i> 
         </button>
     </div>
 

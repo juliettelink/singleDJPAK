@@ -71,10 +71,16 @@ if (isset($_POST['saveSingle'])) {
         }
     }
 
-    // Gestion du fichier audio
-    $audioName = null;
+// Gestion du fichier audio
+$audioName = null;
 
-    if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
+if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
+    // Check if the uploaded file is an MP3 audio file
+    $audioFileType = strtolower(pathinfo($_FILES["audio"]["name"], PATHINFO_EXTENSION));
+    if ($audioFileType != "mp3") {
+        $errors[] = 'Le fichier audio doit être au format MP3.';
+    } else {
+        // Proceed with saving the MP3 audio file
         $audioName = slugify(basename($_FILES["audio"]["name"]));
         $audioName = uniqid() . '-' . $audioName;
 
@@ -85,15 +91,16 @@ if (isset($_POST['saveSingle'])) {
         } else {
             $errors[] = 'Le fichier audio n\'a pas été téléchargé';
         }
-    } else {
-        if (isset($_GET['id'])) {
-            if (isset($_POST['delete_audio'])) {
-                unlink(dirname(__DIR__) . _SINGLES_AUDIOS_FOLDER_ . $_POST['audio']);
-            } else {
-                $audioName = $_POST['audio'];
-            }
+    }
+} else {
+    if (isset($_GET['id'])) {
+        if (isset($_POST['delete_audio'])) {
+            unlink(dirname(__DIR__) . _SINGLES_AUDIOS_FOLDER_ . $_POST['audio']);
+        } else {
+            $audioName = $_POST['audio'];
         }
     }
+}
 
     // Construction du tableau $single
     $single = [
@@ -112,7 +119,7 @@ if (isset($_POST['saveSingle'])) {
             $id = null;
         }
 
-        $res = saveSingles($pdo, $_POST["title"], $_POST['duration'], $_POST["description"], $fileName, $id);
+        $res = saveSingles($pdo, $_POST["title"], $_POST['duration'], $_POST["description"], $fileName, $audioName, $id);
 
         if ($res) {
             $messages[] = "Le single a bien été sauvegardé";
@@ -171,7 +178,7 @@ if (isset($_POST['saveSingle'])) {
         <?php if (isset($_GET['id']) && isset($single['audio'])) { ?>
             <p>
                 <audio controls>
-                    <source src="<?= _SINGLES_AUDIOS_FOLDER_ . $single['audio'] ?>" type="audio/mpeg">
+                    <source src="../assets/music<?= $single['audio'] ?>" type="audio/mpeg">
                     Votre navigateur ne supporte pas l'audio HTML5.
                 </audio>
                 <label for="delete_audio">Supprimer le fichier audio</label>

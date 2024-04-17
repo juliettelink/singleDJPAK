@@ -241,6 +241,7 @@ header a{
     color: #000;
 }
 
+
 /* Ajoutez les styles pour l'icône de pause */
 .pause::after {
     content: "||"; /* Utilisez le contenu ou l'icône appropriée */
@@ -411,6 +412,22 @@ header a{
     color: #000; 
 }
 
+
+/* carrousel avis  */
+.carousel-control-prev,
+.carousel-control-next {
+    color: black !important;
+}
+
+.carousel-control-next:hover
+.carousel-control-prev:hover{
+    color: black !important;
+}
+
+/* login eye */
+#eye-icon{
+    cursor: pointer;
+}
 /* notation par les étoiles*/
 
 .form-group{
@@ -419,6 +436,25 @@ header a{
 
 .la-star {
     font-size: xx-large;
+}
+
+/* politique de confidentialité */
+#privacy-policy-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#close-popup {
+    background-color: #0d0c0c;
+    color: white;
+    border-radius: 10px;
 }
 
 
