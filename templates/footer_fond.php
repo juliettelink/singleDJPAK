@@ -15,12 +15,12 @@
                 </div>
 
                 <ul class="nav col-md-4 justify-content-end list-unstyled align-items-center m-3">
-                    <li class="ms-3 text-center"><a class="text-body-secondary" href="https://open.spotify.com/intl-fr/artist/7L70NlXQPcsZrGWo2SCE9G"><img src="assets/images/spotify.png" alt="Spotify" width="24"></a></li>
-                    <li class="ms-3 text-center"><a class="text-body-secondary" href="https://on.soundcloud.com/S4mfY"><img src="assets/images/soundCloud.png" alt="Souncloud" width="24"></a></li>
-                    <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.youtube.com/results?search_query=djpak"><img src="assets/images/youtube.png" alt="YouTube" width="24"></a></li>
-                    <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.tiktok.com/@djpakafro?_t=8lPlQKN5Pay&_r=1"><img src="assets/images/tiktok.png" alt="TikTok" width="26"></a></li>
-                    <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.instagram.com/djpakafro/"><img src="assets/images/instagram.jpg" alt="Instagram" width="34"></a></li>
-                </ul>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://open.spotify.com/intl-fr/artist/7L70NlXQPcsZrGWo2SCE9G"><i class="fa-brands fa-spotify fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://on.soundcloud.com/S4mfY"><i class="fa-brands fa-soundcloud fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.youtube.com/results?search_query=djpak"><i class="fa-brands fa-youtube fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.tiktok.com/@djpakafro?_t=8lPlQKN5Pay&_r=1"><i class="fa-brands fa-tiktok fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.instagram.com/djpakafro/"><i class="fa-brands fa-square-instagram fa-xl"></i></a></li>
+            </ul>
             </div>
             <div class="text-center">
                 <img src="assets/images/logo.png" alt="Votre Logo" class="mb-3 me-2 mb-md-0" width="40">

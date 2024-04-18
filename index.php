@@ -13,6 +13,7 @@ $singles = getAllSingles($pdo);
 $recentOpinion = getRecentOpinions($pdo);
 ?>
 
+
 <!-- carousel -->
 <div class="carousel">
     <!-- list item -->
@@ -25,14 +26,15 @@ $recentOpinion = getRecentOpinions($pdo);
     <div class="thumbnail">
         <?php require __DIR__ . "/templates/thumbnail_part.php"; ?>
     </div>
-    <!-- next prev -->
 
+    <!-- next prev -->
     <div class="arrows">
         <button id="prev"><</button>
         <button id="next">></button>
     </div>
     <!-- time running -->
     <div class="time"></div>
+
 </div>
 
 <!-- Avis -->
