@@ -25,6 +25,7 @@ $mainmenu =[
     'singles.php' => ['label' => 'Musique', 'icon' => 'fa-music'],
     'opinions.php' => ['label' => 'Avis', 'icon' => 'fa-pen-to-square'],
     'forms.php' => ['label' => 'Messages Clients', 'icon' => 'fa-message'],
+    'newsLetter.php' => ['label' => 'Email Clients', 'icon' => 'fa-envelope'],
     '../logout.php'=>  ['label' => 'Déconnexion', 'icon' => 'fa-sign-out']
 ];
 

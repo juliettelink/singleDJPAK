@@ -64,5 +64,6 @@
 <script src="assets/js/private_politicy.js"></script>
 <script src="assets/js/passwordVisibility.js"></script>
 
+
 </body>
 </html>

@@ -10,21 +10,21 @@ require_once __DIR__ . "/templates/header.php";
 
 
 
-$opinion = false;
+$forms = false;
 $errors = [];
 $messages = [];
 
 if (isset($_GET["id"])) {
     $id = (int)$_GET["id"];
     if (deleteForm($pdo, $id)) {
-        $messages[] = "L'avis a bien été supprimé";
+        $messages[] = "Le formulaire a bien été supprimé";
         header("Location: forms.php");
         exit();
     } else {
         $errors[] = "Une erreur s'est produite lors de la suppression";
     }
 } else {
-    $errors[] = "Aucun ID d'avis spécifié";
+    $errors[] = "Aucun ID formulaire spécifié";
 }
 
 ?>

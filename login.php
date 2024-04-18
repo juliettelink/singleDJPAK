@@ -66,8 +66,9 @@ if (isset($_POST["loginUser"])) {
             <input type="password" name="password" id="password" class="form-control" required>
             <span id="eye-icon" class="eye-icon" onclick="passwordVisibility()">👁️</span>
         </div>
-        <input type="submit" value="Connexion" name="loginUser" class="btn btn-primary" >
+        <input type="submit" value="Connexion" name="loginUser" class="btn btn-dark" >
     </form>
+    <a href="forgotPassword.php">Mot de passe oublié ?</a>
 </div>
 
 <?php

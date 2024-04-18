@@ -157,7 +157,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
         </div>
         <div class="mb-3">
             <label for="duration" class="form-label">Durée du single</label>
-            <input type="time" class="form-control" id="duration" name="duration" value="<?= $single['duration']; ?>" required>
+            <input type="text" class="form-control" id="duration" name="duration" value="<?= $single['duration']; ?>" required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
@@ -165,7 +165,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
         </div>
         <?php if (isset($_GET['id']) && isset($single['image'])) { ?>
             <p>
-                <img src="<?= _SINGLES_IMAGES_FOLDER_ . $single['image'] ?>" alt="<?= $single['title'] ?>" width="100">
+                <img src="../uploads/singles/<?= $single['image'] ?>" alt="<?= $single['title'] ?>" width="100">
                 <label for="delete_image">Supprimer l'image</label>
                 <input type="checkbox" name="delete_image" id="delete_image">
                 <input type="hidden" name="image" value="<?= $single['image']; ?>">
@@ -178,7 +178,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
         <?php if (isset($_GET['id']) && isset($single['audio'])) { ?>
             <p>
                 <audio controls>
-                    <source src="../assets/music<?= $single['audio'] ?>" type="audio/mpeg">
+                    <source src="../assets/music/<?= $single['audio'] ?>" type="audio/mpeg">
                     Votre navigateur ne supporte pas l'audio HTML5.
                 </audio>
                 <label for="delete_audio">Supprimer le fichier audio</label>

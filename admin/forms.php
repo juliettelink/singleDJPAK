@@ -27,6 +27,8 @@ $forms = getForms($pdo);
         <th scope="col">Sujet</th>
         <th scope="col">Message</th>
         <th scope="col">Date</th>
+        <th scope="col">Action</th>
+
         </tr>
     </thead>
     <tbody>
@@ -40,7 +42,7 @@ $forms = getForms($pdo);
             <td><?= $form["message"] ?></td>
             <td><?= $form["date"] ?></td>
             <td>
-                <a href="form_delete.php?id=<?=$form['form_id']?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer cet avis')">Supprimer</a>
+                <a href="form_delete.php?id=<?=$form['form_id']?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce formulaire')">Supprimer</a>
             </td>
         </tr>
         <?php } ?>

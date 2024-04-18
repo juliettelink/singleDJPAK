@@ -6,7 +6,7 @@
         <div class="des"><?=htmlentities($single["description"]) ?> </div>
         <div class="buttons">
             <a href="music.php?id=<?=$single["id"];?>" class="button">Voir plus</a>
-            <a href="form.php" class="button">Contact</a>
+            <a href="newsLetter.php" class="button">Newsletter</a>
         </div>
     </div>
 </div>
