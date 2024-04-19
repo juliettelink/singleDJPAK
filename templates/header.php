@@ -48,7 +48,7 @@ $currentPage = basename($_SERVER["SCRIPT_NAME"]);
 </div>
                 
 <div class="navbar-nav">
-    <audio id="myAudio" autoplay controls style="display: none;">
+    <audio id="myAudio" controls style="display: none;">
         <source src="assets/music/intro.MP3" type="audio/mpeg">
         Votre navigateur ne supporte pas l'élément audio.
     </audio>

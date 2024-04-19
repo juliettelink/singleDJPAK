@@ -16,6 +16,7 @@ employeAndAdmin();
     <li>Dans l'espace <B>Musique</B> : ajoute, supprime ou modifie un modéle. </li>
     <li>Dans l'espace <B>Avis</B> : ajoute , supprime ou modifie un avis.</li>
     <li>Dans l'espace <B>Message Visiteur</B> : supprime un message.</li>
+    <li>Dans l'espace <B>Email Newsletter</B> : supprime un email.</li>
 </ul>
 
 

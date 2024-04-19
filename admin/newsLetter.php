@@ -15,7 +15,7 @@ $newsLetters = getNewsletters($pdo);
 
 ?>
 
-<h1 class="py-3">Listes des messages clients</h1>
+<h1 class="py-3">Listes des emails Newsletter</h1>
 
 <table class="table">
     <thead>

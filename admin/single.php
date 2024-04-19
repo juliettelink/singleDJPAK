@@ -152,11 +152,11 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
 <?php if ($single !== false) { ?>
     <form method="POST" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="title" class="form-label">Nom du single</label>
+            <label for="title" class="form-label">Nom de la musique</label>
             <input type="text" class="form-control" id="title" name="title" value="<?= $single['title']; ?>" required>
         </div>
         <div class="mb-3">
-            <label for="duration" class="form-label">Durée du single</label>
+            <label for="duration" class="form-label">Durée</label>
             <input type="text" class="form-control" id="duration" name="duration" value="<?= $single['duration']; ?>" required>
         </div>
         <div class="mb-3">
@@ -172,7 +172,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
             </p>
         <?php } ?>
         <p>
-            <label for="file">Image du single</label>
+            <label for="file">Image (1500x841)</label>
             <input type="file" name="file" id="file">
         </p>
         <?php if (isset($_GET['id']) && isset($single['audio'])) { ?>
@@ -187,7 +187,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
             </p>
         <?php } ?>
         <p>
-            <label for="audio">Fichier audio</label>
+            <label for="audio">Audio</label>
             <input type="file" name="audio" id="audio">
         </p>
         <input type="submit" name="saveSingle" class="btn btn-primary" value="Enregistrer">

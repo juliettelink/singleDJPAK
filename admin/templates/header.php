@@ -24,8 +24,8 @@ $mainmenu =[
     'inscription.php'=>['label'=> 'Création de compte', 'icon'=>'fa-arrow-right-to-bracket'],
     'singles.php' => ['label' => 'Musique', 'icon' => 'fa-music'],
     'opinions.php' => ['label' => 'Avis', 'icon' => 'fa-pen-to-square'],
-    'forms.php' => ['label' => 'Messages Clients', 'icon' => 'fa-message'],
-    'newsLetter.php' => ['label' => 'Email Clients', 'icon' => 'fa-envelope'],
+    'forms.php' => ['label' => 'Messages Visiteur', 'icon' => 'fa-message'],
+    'newsLetter.php' => ['label' => 'Email Newsletter', 'icon' => 'fa-envelope'],
     '../logout.php'=>  ['label' => 'Déconnexion', 'icon' => 'fa-sign-out']
 ];
 

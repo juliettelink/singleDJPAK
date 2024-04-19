@@ -24,7 +24,7 @@ if (isset($_GET["id"])) {
         $errors[] = "Une erreur s'est produite lors de la suppression";
     }
 } else {
-    $errors[] = "Aucun ID formulaire spécifié";
+    $errors[] = "Aucun ID message spécifié";
 }
 
 ?>
