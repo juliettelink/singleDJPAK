@@ -9,6 +9,7 @@ require_once __DIR__ . "/../lib/single.php";
 require_once __DIR__ . "/templates/header.php";
 
 
+adminOnly();
 
 $single = false;
 $errors = [];

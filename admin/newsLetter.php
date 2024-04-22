@@ -7,10 +7,9 @@ require_once __DIR__. "/../lib/newsLetter.php";
 require_once __DIR__. "/templates/header.php";
 
 
-
+adminOnly();
 
 $newsLetters = getNewsletters($pdo);
-
 
 
 ?>
@@ -31,7 +30,7 @@ $newsLetters = getNewsletters($pdo);
             <th scope="row"><?= $newsLetter["id"] ?></th>
             <td><?= $newsLetter["email"] ?></td>
             <td>
-                <a href="newsletter_delete.php?id=<?=$newsLetter["id"]?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce mail')">Supprimer</a>
+                <a href="newsLetter_delete.php?id=<?=$newsLetter["id"]?>" class="btn btn-outline-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce mail')">Supprimer</a>
             </td>
         </tr>
         <?php } ?>

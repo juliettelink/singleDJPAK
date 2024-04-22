@@ -14,6 +14,7 @@ $currentPage = basename($_SERVER["SCRIPT_NAME"]);
     <meta name="description" content="<?=$mainMenu[$currentPage]["meta_description"]?>">
     <title><?=$mainMenu[$currentPage]["head_title"]?></title>
     <title>Musique DJPak</title>
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -40,9 +41,7 @@ $currentPage = basename($_SERVER["SCRIPT_NAME"]);
         </div>
         <div class="navbar-nav">
     <!-- Boutons de lecture et de pause stylisés avec une image -->
-            <button id="play-pause" class="play">
-                <img src="chemin/vers/votre/image.png" alt="Play" id="play-icon">
-            </button>
+            <button id="play-pause" class="play"></button>
         </div>
     </nav>
 </div>

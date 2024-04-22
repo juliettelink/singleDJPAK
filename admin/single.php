@@ -8,6 +8,8 @@ require_once __DIR__ . "/../lib/tools.php";
 require_once __DIR__ . "/../lib/single.php";
 require_once __DIR__ . "/templates/header.php";
 
+adminOnly();
+
 $errors = [];
 $messages = [];
 $single = [

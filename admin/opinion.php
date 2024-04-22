@@ -8,7 +8,7 @@ require_once __DIR__ . "/../lib/tools.php";
 require_once __DIR__ . "/../lib/opinion.php";
 require_once __DIR__ . "/templates/header.php";
 
-
+employeAndAdmin();
 
 
 $errors = [];

@@ -7,7 +7,7 @@ require_once __DIR__. "/../lib/opinion.php";
 require_once __DIR__. "/templates/header.php";
 
 
-
+employeAndAdmin();
 
 
 $opinions = getOpinions($pdo);

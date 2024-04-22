@@ -58,6 +58,7 @@ header a{
             
 }
 
+/* le bouton play dans header */
 
 #play-pause {
     background-color: black;
@@ -165,7 +166,7 @@ header a{
 }
 
 .carousel .list .item .buttons a.button:first-child {
-    color: #fff; /* Set the color to white */
+    color: #131313; /* Set the color to white */
 }
 
 .carousel .list .item .buttons a.button:nth-child(2) {
@@ -400,17 +401,39 @@ header a{
     }
 }
 @media screen and (max-width: 678px) {
+    /* Ajustement de la position de l'image pour représenter la partie droite */
+    .carousel .list .item img {
+        width: auto; /* Rétablir la largeur automatique pour maintenir le ratio d'aspect de l'image */
+        height: 100%; /* Occuper toute la hauteur disponible */
+        object-fit: cover; /* Assurer que l'image couvre tout le conteneur */
+        object-position: right; /* Aligner l'image sur la partie droite */
+    }
     .carousel .list .item .content{
         padding-right: 0;
+        top: 50%; /* Aligner le contenu au milieu de l'image */
+        transform: translateY(-50%); /* Ajuster la position verticale */
+        left: auto; /* Annuler la position à gauche */
+        right: 10px; /* Aligner le contenu à droite avec un peu de marge */
+        width: calc(100% - 30px); /* Largeur du contenu (100% moins la marge) */
+        max-width: 80%; /* Largeur maximale du contenu */
+        text-align: right; /* Aligner le texte à droite */
     }
     .carousel .list .item .content .title{
         font-size: 30px;
     }
+    /* Ajustement de la taille des miniatures */
+    .thumbnail .item {
+        width: 100px; /* Ajuster la largeur des miniatures */
+        height: auto; /* Rétablir la hauteur automatique pour maintenir le ratio d'aspect */
+    }
 }
+
 
 .carousel-caption h3, p{
     color: #000; 
 }
+
+
 
 
 /* carrousel avis  */

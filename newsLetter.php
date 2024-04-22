@@ -27,12 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
             // Si l'e-mail n'est pas déjà inscrit, l'ajouter à la base de données
             $stmt = $pdo->prepare("INSERT INTO newsletter_subscribers (email) VALUES (:email)");
             $stmt->execute(["email" => $email]);
+
+            // Définir la variable de session une fois que l'inscription est réussie
+            $_SESSION['newsletter_subscribers'] = true;
+
+
             // Afficher un message de confirmation
             echo '<div class="alert alert-success" role="alert">
-                        Vous avez été inscrit à la newsletter avec succès !
+                        Vous avez été inscrit à la newsletter avec succès ! Vous allez étre rediriger vers la page musique.
                     </div>';
-                // Rediriger l'utilisateur vers la page index après un délai de 2 secondes
-                header("refresh:2;url=index.php");;
+                // Rediriger l'utilisateur vers la page music après un délai de 2 secondes
+                header("refresh:2;url=music.php");
             exit(); // Assurez-vous de terminer le script après la redirection
         } else {
             // Si l'e-mail est déjà inscrit, afficher un message d'erreur
@@ -42,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
         }
     }
 }
+
 
 ?>
 <div class="fond">
