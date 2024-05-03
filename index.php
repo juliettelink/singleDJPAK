@@ -13,6 +13,12 @@ $singles = getAllSingles($pdo);
 $recentOpinion = getRecentOpinions($pdo);
 ?>
 
+<!-- Bannière "Dance to the Beat" avec bouton -->
+<section class="banner-container" style="position: relative;">
+    <img src="assets/images/dance to the beat.gif" alt="nom de l'album" class="banner-image">
+    <!-- Bouton vers la page d'album -->
+    <a href="album" class="btn btn-dark bouton">Voir l'album</a>
+</section>
 
 <!-- carousel -->
 <div class="carousel">

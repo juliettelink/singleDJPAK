@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
 
 ?>
 <div class="fond">
-<div class="container py-5">
+    <div class="container py-5">
         <h1>Inscription à la newsletter</h1>
         <form method="post">
             <div class="form-group">
