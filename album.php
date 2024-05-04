@@ -22,23 +22,27 @@ $albums = getAllAlbums($pdo);
         <div class="row">
             <?php foreach ($albums as $album) {?>
 
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $album['image']; ?>" class="card-img-top" alt="image couverture album">
+            <div class="col-md-4 mb-3">
+                <div class="card" style="width: 25rem;">
+                    <img src="assets/albums/pochettes/<?= $album['image']; ?>" class="card-img-top" alt="image couverture album">
                     <div class="card-body text-center">
                         <h5 class="card-title"><?= $album['titre']; ?></h5>
                         <p class="card-text"><?= $album['description']; ?></p>
                         <button class="btn btn-dark btn-toggle my-3" data-album="<?php echo $album['album_id']; ?>">Voir les chansons</button>
                         <div class="songs" style="display: none;">
-                            <?php foreach ($chansons as $chanson) { 
-                                $chansons = getChansonsByAlbumId($pdo, $album['album_id']);?>
+                            <?php $chansons = getChansonsByAlbumId($pdo, $album['album_id']);
+                            foreach ($chansons as $chanson) { ?>
                                 <div class="song">
                                     <h6 class="song-title"><?=$chanson['titre']; ?></h6>
-                                    <audio controls>
-                                        <source src="<?= $chanson['audio']; ?>" type="audio/mpeg">
+                                    <audio controls style="width: 50%;">
+                                        <source src="assets/albums/chansons/<?= $chanson['audio']; ?>" type="audio/mpeg">
                                         Votre navigateur ne prend pas en charge l'élément audio.
                                     </audio>
-                                    <a href="<?=$chanson['audio']; ?>" download>Télécharger</a>
+                                    <?php if (isset($_SESSION['newsletter_subscribers']) && $_SESSION['newsletter_subscribers'] === true) { ?>
+                                        <a href="assets/albums/chansons/<?=$chanson['audio']; ?>" download>Télécharger</a>
+                                    <?php } else { ?>
+                                        <a href="newsLetter.php" class="btn btn-dark text-white">Télécharger</a>
+                                    <?php } ?>
                                 </div>
                             <?php } ?>
                         </div>

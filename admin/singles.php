@@ -12,7 +12,7 @@ $singles = getAllSingles($pdo);
 
 ?>
 
-<h1 class="py-3">Listes des singles</h1>
+<h1 class="py-3">Listes des singles pour la page d'acceuil est la page musique</h1>
 
 <div class="d-flex gap-é justify-content-left py-5">
     <a class="btn btn-primary d-inline-flex align-items-left" href="single.php">

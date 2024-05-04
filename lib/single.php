@@ -37,7 +37,7 @@ function getSingleImage(string|null $image):string
 }
 }
 
-//fonction delet service
+//fonction delet singles
 function deleteSingles(PDO $pdo, int $id):bool
 {
     

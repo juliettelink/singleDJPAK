@@ -23,9 +23,11 @@
 $mainmenu =[
     'inscription.php'=>['label'=> 'Création de compte', 'icon'=>'fa-arrow-right-to-bracket'],
     'singles.php' => ['label' => 'Musique', 'icon' => 'fa-music'],
+    'albums.php' => ['label' => 'Album', 'icon' => 'fa-compact-disc'],
     'opinions.php' => ['label' => 'Avis', 'icon' => 'fa-pen-to-square'],
     'forms.php' => ['label' => 'Messages Visiteur', 'icon' => 'fa-message'],
     'newsLetter.php' => ['label' => 'Email Newsletter', 'icon' => 'fa-envelope'],
+    'blogs.php' => ['label' => 'Blog', 'icon' => 'fa-blog'],
     '../logout.php'=>  ['label' => 'Déconnexion', 'icon' => 'fa-sign-out']
 ];
 
