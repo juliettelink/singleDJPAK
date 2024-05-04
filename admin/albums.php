@@ -17,7 +17,6 @@ $albums = getAllAlbums($pdo);
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="m-0">Liste des albums</h2>
     <a href="album.php" class="btn btn-primary">Ajouter un album</a>
-    <a href="chanson.php" class="btn btn-primary">Ajouter un son</a>
 </div>
 
 <table class="table">
@@ -59,7 +58,7 @@ $albums = getAllAlbums($pdo);
                                             Votre navigateur ne supporte pas l'audio HTML5.
                                         </audio>
                                     </td>
-                                    <td><img src="<?= $chanson['image']; ?>" alt="<?= $chanson['titre']; ?>" width="50"></td>
+                                    <td><img src="../assets/albums/pochettes/<?= $chanson['image']; ?>" alt="<?= $chanson['titre']; ?>" width="50"></td>
                                     <td>
                                         <a href="chanson_delete.php?id=<?= $chanson['album_id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet album ?')">Supprimer</a>
                                     </td>
@@ -71,6 +70,7 @@ $albums = getAllAlbums($pdo);
                 <td>
                     <a href="album.php?id=<?= $album['album_id'] ?>" class="btn btn-outline-primary">Modifier l'album</a>
                     <a href="album_delete.php?id=<?= $album['album_id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet album ?')">Supprimer l'album</a>
+                    <a href="chanson.php" class="btn btn-primary">Ajouter un son</a>
                 </td>
             </tr>
         <?php } ?>

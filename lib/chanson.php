@@ -13,12 +13,10 @@ function deleteChanson(PDO $pdo, int $chanson_id): bool
     $query = $pdo->prepare("DELETE FROM chanson WHERE chanson_id = :chanson_id");
     $query->bindValue(':chanson_id', $chanson_id, PDO::PARAM_INT);
 
-    $query->execute();
-    if ($query->rowCount() > 0) {
-        return true;
-    } else {
-        return false;
-    }
+    // Exécuter la requête de suppression
+    $success = $query->execute();
+
+    return $success; // Retourner true si la suppression a été effectuée avec succès, sinon false
 }
 
 
