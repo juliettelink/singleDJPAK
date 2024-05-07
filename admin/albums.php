@@ -60,7 +60,7 @@ $albums = getAllAlbums($pdo);
                                     </td>
                                     <td><img src="../assets/albums/pochettes/<?= $chanson['image']; ?>" alt="<?= $chanson['titre']; ?>" width="50"></td>
                                     <td>
-                                        <a href="chanson_delete.php?id=<?= $chanson['album_id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet album ?')">Supprimer</a>
+                                        <a href="chanson_delete.php?id=<?= $chanson['chanson_id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer la chanson ?')">Supprimer</a>
                                     </td>
                                 </tr>
                             <?php } ?>

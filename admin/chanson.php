@@ -24,36 +24,64 @@ if (isset($_POST['saveChansons'])) {
         // Vérifier si tous les champs sont remplis
         $titre = $_POST['titres'][$i];
         $audioTmpName = $_FILES['audios']['tmp_name'][$i];
-        $imageTmpName = $_FILES['images']['tmp_name'][$i];
+        $imageTmpName = isset($_FILES['images']['tmp_name'][$i]) ? $_FILES['images']['tmp_name'][$i] : '';
 
         if (empty($titre) || empty($audioTmpName)) {
             $errors[] = "Le titre et le fichier audio sont obligatoires pour chaque chanson.";
             continue; // Passer à la chanson suivante si des champs sont manquants
         }
 
-        // Enregistrer les fichiers audio et images dans le dossier approprié
-        $audioFileName = saveFile($audioTmpName, _ALBUM_SONS_FOLDER_);
+        // Enregistrer les fichiers audio dans le dossier approprié
+        $audioFileName = basename($_FILES['audios']['name'][$i]);
+        $targetPathAudio = dirname(__DIR__) . _ALBUM_SONS_FOLDER_ . $audioFileName;
 
-        // Vérifier si le fichier audio a été enregistré avec succès
-        if (!$audioFileName) {
+        // Vérifier si le dossier de destination existe et est accessible en écriture
+        if (!file_exists(dirname(__DIR__) . _ALBUM_SONS_FOLDER_) || !is_writable(dirname(__DIR__) . _ALBUM_SONS_FOLDER_)) {
+            $errors[] = "Le dossier de destination pour les fichiers audio n'existe pas ou n'est pas accessible en écriture.";
+            continue; // Passer à la chanson suivante en cas d'échec
+        }
+
+        // Déplacer le fichier audio vers le dossier de destination
+        if (!move_uploaded_file($audioTmpName, $targetPathAudio)) {
             $errors[] = "Erreur lors de l'enregistrement du fichier audio.";
             continue; // Passer à la chanson suivante en cas d'échec
         }
 
         // Enregistrer l'image uniquement si elle est fournie
-        $imageFileName = null;
         if (!empty($imageTmpName)) {
-            $imageFileName = saveFile($imageTmpName, _ALBUM_IMAGES_FOLDER_);
+            $imageFileName = basename($_FILES['images']['name'][$i]);
+            $targetPathImage = dirname(__DIR__) . _ALBUM_IMAGES_FOLDER_ . $imageFileName;
+
+            // Vérifier si le dossier de destination existe et est accessible en écriture
+            if (!file_exists(dirname(__DIR__) . _ALBUM_IMAGES_FOLDER_) || !is_writable(dirname(__DIR__) . _ALBUM_IMAGES_FOLDER_)) {
+                $errors[] = "Le dossier de destination pour les images n'existe pas ou n'est pas accessible en écriture.";
+                continue; // Passer à la chanson suivante en cas d'échec
+            }
+
+            // Déplacer le fichier image vers le dossier de destination
+            if (!move_uploaded_file($imageTmpName, $targetPathImage)) {
+                $errors[] = "Erreur lors de l'enregistrement du fichier image.";
+                continue; // Passer à la chanson suivante en cas d'échec
+            }
         }
 
         // Insérer la chanson dans la base de données
-        $success = saveChanson($pdo, $albumId, $titre, $audioFileName, $imageFileName);
+        $query = "INSERT INTO chanson (album_id, titre, audio, image) VALUES (:album_id, :titre, :audio, :image)";
+        $params = [
+            'album_id' => $albumId,
+            'titre' => $titre,
+            'audio' => $audioFileName,
+            'image' => $imageFileName ?? null
+        ];
+
+        $statement = $pdo->prepare($query);
+        $success = $statement->execute($params);
 
         // Traiter les résultats
         if ($success) {
-            $messages[] = "Les chansons ont été ajoutées avec succès à l'album.";
+            $messages[] = "La chanson \"$titre\" a été ajoutée avec succès à l'album.";
         } else {
-            $errors[] = "Erreur lors de l'ajout des chansons à l'album.";
+            $errors[] = "Erreur lors de l'ajout de la chanson \"$titre\" à l'album.";
         }
     }
 }

@@ -9,13 +9,13 @@ require_once __DIR__ . "/templates/header.php";
 
 adminOnly();
 
-$single = false;
+$album = false;
 $errors = [];
 $messages = [];
 if (isset($_GET["id"])) {
-    $single =  getAlbumById($pdo, (int)$_GET["id"]);
+    $album =  getAlbumById($pdo, (int)$_GET["id"]);
 }
-if ($single) {
+if ($album) {
     if (deleteAlbum($pdo, $_GET["id"])) {
         $messages[] = "L'album a bien été supprimé";
         header("Location: albums.php");
@@ -28,7 +28,7 @@ if ($single) {
 
 ?>
 <div class="row text-center my-5">
-    <h1>Supression du blog</h1>
+    <h1>Supression de l'album</h1>
     <?php foreach ($messages as $message) { ?>
         <div class="alert alert-success" role="alert">
             <?= $message; ?>

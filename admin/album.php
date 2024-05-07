@@ -39,7 +39,6 @@ if (isset($_POST['saveAlbum'])) {
     if (empty($_POST['description'])) {
         $errors[] = "Le champ 'Description' ne peut pas être vide.";
     }
-    var_dump($_POST);
 
     // Gestion de l'image de l'album
     $fileName = null;

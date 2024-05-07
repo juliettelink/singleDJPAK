@@ -16,7 +16,7 @@ $blogs = getAllBlog($pdo);
 ?>
 <div class="fond">
     <div class="container py-5">
-        <h1 class="text-center py-5">Actualité</h1>
+        <h1 class="text-center py-5">Blog</h1>
 
 
         <div class="row">
