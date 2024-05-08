@@ -10,6 +10,7 @@ function getCommentsByArticleId($pdo, $article_id): array|bool
 }
 
 function saveComment(PDO $pdo, string $name, string $comment, int $articleId) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Préparer la requête d'insertion
         $query = "INSERT INTO comment_blog (name, comment, article_id) VALUES (:name, :comment, :articleId)";
@@ -25,4 +26,5 @@ function saveComment(PDO $pdo, string $name, string $comment, int $articleId) {
     } catch (PDOException $e) {
         echo '<div class="alert alert-danger" role="alert">Erreur lors de l\'enregistrement du commentaire : ' . $e->getMessage() . '</div>';
     }
+}
 }
