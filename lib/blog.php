@@ -46,3 +46,4 @@ function deleteBlog(PDO $pdo, int $id):bool
         return false;
     }
 }
+

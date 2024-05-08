@@ -19,7 +19,7 @@ $albums = getAllAlbums($pdo);
         <h1 class="text-center">Découvrez les albums</h1>
         <p class="text-center">Pour télécharger gratuitement, il suffit de cliquer sur le bouton, de rentrer votre mail et vous pourrez télécharger ma musique.</p>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <?php foreach ($albums as $album) {?>
 
             <div class="col-md-4 mb-3">

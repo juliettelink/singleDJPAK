@@ -16,6 +16,7 @@ $blog = [
     'titre' => '',
     'date' => '',
     'sujet' => '',
+    
 ];
 
 if (isset($_GET['id'])) {

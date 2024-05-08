@@ -9,7 +9,7 @@ $mainMenu = [
     "opinions.php"=> ["menu_title" => "Avis", "head_title" => "avis","meta_description" => "donnez votre avis sur la musique de DJPAK"],
     "newsLetter.php"=> ["menu_title" => "Newsletter", "head_title" => "Newsletter","meta_description" => "inscrivez-vous à la newsletter"],
     "blog.php"=> ["menu_title" => "Blog", "head_title" => "Blog","meta_description" => "Blog, retouver l'actualité de DJPAK"],
-
+    "article.php"=> ["menu_title" => "Article de blog", "head_title" => "article de blog","meta_description" => "article lire la suite de blog", "exclude"=> true],
     "login.php"=> ["menu_title" => "login", "head_title" => "connexion","meta_description" => "Connection à l'espace professionnel", "exclude"=> true],
     "forgotPassword.php"=> ["menu_title" => "Mot-de-passe-oublié", "head_title" => "mot-de passe oublié","meta_description" => "mot de passe oublié pour espace pro", "exclude"=> true]
     ]
