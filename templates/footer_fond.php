@@ -20,6 +20,8 @@
                 <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.youtube.com/results?search_query=djpak"><i class="fa-brands fa-youtube fa-xl"></i></a></li>
                 <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.tiktok.com/@djpakafro?_t=8lPlQKN5Pay&_r=1"><i class="fa-brands fa-tiktok fa-xl"></i></a></li>
                 <li class="ms-3 text-center"><a class="text-body-secondary" href="https://www.instagram.com/djpakafro/"><i class="fa-brands fa-square-instagram fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://deezer.page.link/3pjUi2PFdkgEXv5A6"><i class="fa-brands fa-deezer fa-xl"></i></a></li>
+                <li class="ms-3 text-center"><a class="text-body-secondary" href="https://music.apple.com/us/album/dance-to-the-rythme-single/1738869257"><i class="fa-solid fa-music fa-xl"></i></i></a></li>
             </ul>
             </div>
             <div class="text-center">

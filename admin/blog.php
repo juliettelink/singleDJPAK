@@ -32,6 +32,7 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_POST['saveBlog'])) {
+    var_dump($_POST);
     // Validation pour s'assurer que les champs ne sont pas vides
     if (empty($_POST['titre'])) {
         $errors[] = "Le champ 'Titre du blog' ne peut pas être vide.";
@@ -90,7 +91,7 @@ if (isset($_POST['saveBlog'])) {
         } else {
             $id = null;
         }
-
+        var_dump($_POST["titre"], $_POST['date'], $_POST["sujet"], $fileName, $id);
         $res = saveBlog($pdo, $_POST["titre"], $_POST['date'], $_POST["sujet"], $fileName, $id);
 
         if ($res) {
@@ -122,7 +123,7 @@ if (isset($_POST['saveBlog'])) {
     </div>
 <?php } ?>
 <?php if ($blog !== false) { ?>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" novalidate>
         <div class="mb-3">
             <label for="titre" class="form-label">Nom du blog</label>
             <input type="text" class="form-control" id="titre" name="titre" value="<?= $blog['titre']; ?>" required>
@@ -133,7 +134,8 @@ if (isset($_POST['saveBlog'])) {
         </div>
         <div class="mb-3">
             <label for="sujet" class="form-label">Sujet</label>
-            <textarea class="form-control" id="sujet" name="sujet" required><?= $blog['sujet']; ?></textarea>
+            <textarea class="form-control" id="editor" name="sujet" required><?= $blog['sujet']; ?></textarea>
+           
         </div>
         <?php if (isset($_GET['id']) && isset($blog['image'])) { ?>
             <p>
@@ -151,4 +153,8 @@ if (isset($_POST['saveBlog'])) {
         <input type="submit" name="saveBlog" class="btn btn-primary" value="Enregistrer">
     </form>
 <?php } ?>
+
+
+
+
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

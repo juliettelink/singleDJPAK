@@ -152,7 +152,7 @@ if (isset($_FILES["audio"]["tmp_name"]) && $_FILES["audio"]["tmp_name"] != '') {
     </div>
 <?php } ?>
 <?php if ($single !== false) { ?>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" novalidate>
         <div class="mb-3">
             <label for="title" class="form-label">Nom de la musique</label>
             <input type="text" class="form-control" id="title" name="title" value="<?= $single['title']; ?>" required>

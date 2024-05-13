@@ -102,46 +102,47 @@ header a{
 /* page index */
 
 /* pochette album */
+
 .banner-container {
     width: 100%;
     max-width: 100%;
     height: auto;
     overflow: hidden;
+    position: relative; /* Ajout pour positionner le bouton correctement */
 }
 
 .banner-image {
     width: 100%;
-    height: 100%;
+    height: auto; /* Changé de 100% à auto pour garder les proportions */
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-    /* Styles spécifiques pour les appareils mobiles */
+.bouton {
+    position: absolute; 
+    top: 50%; /* Ajusté le positionnement pour être centré verticalement */
+    right: 10px; /* Ajusté pour que le bouton soit près du bord droit */
+    transform: translateY(-50%);
+    padding: 10px 20px; 
+    border: 2px solid white; 
+    background-color: transparent; 
+    color: white;
+}
 
-    .bouton{
-        position: absolute; 
-        top: 70%; 
-        right: 150px; 
-        transform: translateY(-50%);
-        padding: 10px 20px; 
-        border: 2px solid white; 
-        background-color: transparent; 
-        color: white;
-
+/* Styles spécifiques pour les appareils mobiles */
+@media screen and (max-width: 768px) { /* Exemple de taille d'écran pour les téléphones */
+    .banner-image {
+        max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas l'écran */
+        height: auto; /* Pour garder les proportions de l'image */
     }
 
-@media (max-width: 768px) {
     .bouton {
-        width: 30%; /* Ajustez la largeur du bouton selon vos besoins */
-        right: 5%; /* Ajustez la marge droite du bouton selon vos besoins */
-        bottom: 15%; /* Ajustez la marge basse du bouton selon vos besoins */
-        text-align: center;
-        position: absolute;
-        top: auto;
-        }
-    } 
-
+        top: 70%; /* Ajusté pour s'adapter à la nouvelle position */
+        right: 10px; /* Ajusté pour être près du bord droit */
+        transform: translateY(-50%);
+    }
+}
 
 
 /* carousel */

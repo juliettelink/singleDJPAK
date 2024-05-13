@@ -73,7 +73,7 @@ if (isset($_POST['saveAlbum'])) {
             }
         }
     }
-    var_dump($fileName);
+
 
     // Construction du tableau $album
     $album = [

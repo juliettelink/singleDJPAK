@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
 
             // Afficher un message de confirmation
             echo '<div class="alert alert-success" role="alert">
-                        Vous avez été inscrit à la newsletter avec succès ! Vous allez étre rediriger vers la page musique.
+                        Vous avez été inscrit à la newsletter avec succès ! Vous allez étre rediriger vers la page album.
                     </div>';
                 // Rediriger l'utilisateur vers la page music après un délai de 2 secondes
-                header("refresh:2;url=music.php");
+                header("refresh:2;url=album.php");
             exit(); // Assurez-vous de terminer le script après la redirection
         } else {
             // Si l'e-mail est déjà inscrit, afficher un message d'erreur

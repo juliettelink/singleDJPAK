@@ -40,7 +40,7 @@ $blogs =  getAllBlog($pdo);
             <th scope="row"><?= $blog["id"] ?></th>
             <td><?= $blog["date"] ?></td>
             <td><?= $blog["titre"] ?></td>
-            <td><?= $blog["sujet"] ?></td>
+            <td><?= substr($blog["sujet"], 0, 50) . (strlen($blog["sujet"]) > 50 ? "..." : "") ?></td>
             <td><img src="../uploads/blog/<?= $blog['image'] ?>" alt="<?= $blog['titre'] ?>" width="50"></td>
             <td><?= getLikesCount($pdo, $blog['id']); ?></td> 
             <td>

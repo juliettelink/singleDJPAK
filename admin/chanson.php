@@ -144,7 +144,7 @@ if (isset($_POST['saveChansons'])) {
                 </div>
                 <div class="mb-3">
                     <label for="image${i}" class="form-label">Image de la chanson</label>
-                    <input type="file" name="images[]" id="image${i}" class="form-control" required>
+                    <input type="file" name="images[]" id="image${i}" class="form-control">
                 </div>
             `;
             chansonsFields.appendChild(chansonFieldset);

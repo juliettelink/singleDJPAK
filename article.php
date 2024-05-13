@@ -52,6 +52,7 @@ $comments = getCommentsByArticleId($pdo, $article_id);
 
 ?>
 
+
 <div class="fond">
     <div class="container py-5">
         <div class="row">
@@ -59,16 +60,22 @@ $comments = getCommentsByArticleId($pdo, $article_id);
                 <div class="card">
                     <img src="uploads/blog/<?= htmlspecialchars($article['image']); ?>" class="card-img-top" alt="Image de l'article">
                     <div class="card-body">
-                        <h5 class="card-title"><?= htmlspecialchars($article['titre']); ?></h5>
-                        <p class="card-text"><?= htmlspecialchars($article['date']); ?></p>
-                        <p class="card-text"><?= htmlspecialchars($article['sujet']); ?></p>
+                        <div class="d-flex justify-content-between">
+                            <div></div> <!-- Placeholder for left alignment -->
+                            <a href="blog.php" class="btn btn-outline-dark ml-auto">Retour au blog</a>
+                        </div>                    
+                        <div class="text-center">
+                            <h3 class="card-title"><?= htmlspecialchars($article['titre']); ?></h3>
+                            <p class="card-text"><?= htmlspecialchars($article['date']); ?></p>
+                        </div>
+                        <p class="card-text mt-5"><?= htmlspecialchars_decode($article['sujet']); ?></p>
                         <div class="like-container">
                             <button class="btn btn-like" data-article-id="<?= $article['id']; ?>"><i class="fa-solid fa-heart" style="color: #74C0FC;"></i></button>
                             <span id="likes-count-<?= $article['id']; ?>"><?= getLikesCount($pdo, $article['id']); ?></span>
                         </div>
-
-                        <!-- Formulaire de commentaire -->
-                        <form id="comment-form" class="mt-4" method="POST">
+                        
+                        <button class="btn btn-outline-dark show-comment-form ">Commenter</button>
+                        <form class="comment-form mt-5" style="display: none;"  method="POST">
                             <div class="form-group">
                                 <label for="comment-name">Nom</label>
                                 <input type="text" class="form-control" id="comment-name" name="comment-name" required>
@@ -78,19 +85,23 @@ $comments = getCommentsByArticleId($pdo, $article_id);
                                 <textarea class="form-control" id="comment-comment" name="comment-comment" rows="3" required></textarea>
                             </div>
                             <input type="hidden" name="article_id" value="<?= $article['id']; ?>">
-                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                            <button type="submit" class="btn btn-outline-dark">Envoyer</button>
                         </form>
+
 
                         <!-- Liste des commentaires -->
                         <div class="mt-4">
                             <h5>Commentaires</h5>
-                            <ul>
+                            <div class="card-columns">
                                 <?php foreach ($comments as $comment) : ?>
-                                    <li>
-                                        <strong><?= htmlspecialchars($comment['name']); ?></strong>: <?= htmlspecialchars($comment['comment']); ?>
-                                    </li>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title"><?= htmlspecialchars($comment['name']); ?></h6>
+                                            <p class="card-text"><?= htmlspecialchars($comment['comment']); ?></p>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,6 +138,20 @@ $comments = getCommentsByArticleId($pdo, $article_id);
             });
         });
     });
+
+    // JavaScript pour afficher/masquer le formulaire de commentaire
+document.addEventListener('DOMContentLoaded', function() {
+    const commentButtons = document.querySelectorAll('.show-comment-form');
+    commentButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const commentForm = this.nextElementSibling; // Sélectionne le formulaire suivant
+            if (commentForm) {
+                // Affiche ou masque le formulaire de commentaire
+                commentForm.style.display = (commentForm.style.display === 'none') ? 'block' : 'none';
+            }
+        });
+    });
+});
 </script>
 
 <?php

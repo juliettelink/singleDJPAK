@@ -5,6 +5,7 @@ session_set_cookie_params([
  'domain' => _DOMAIN_,
  // 'secure' => true, a rajouter quand on deploie
  'httponly' => true,
+//  'samesite' => 'None', // Ajout de l'attribut SameSite
  
 ]);
 

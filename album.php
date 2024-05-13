@@ -22,11 +22,11 @@ $albums = getAllAlbums($pdo);
         <div class="row justify-content-center">
             <?php foreach ($albums as $album) {?>
 
-            <div class="col-md-4 mb-3">
-                <div class="card" style="width: 25rem;">
+            <div class="col-md-6 mb-5">
+                <div class="card mx-auto" style="width: 22rem;">
                     <img src="assets/albums/pochettes/<?= $album['image']; ?>" class="card-img-top" alt="image couverture album">
                     <div class="card-body text-center">
-                        <h5 class="card-title"><?= $album['titre']; ?></h5>
+                        <h5 class="card-title "><?= $album['titre']; ?></h5>
                         <p class="card-text"><?= $album['description']; ?></p>
                         <button class="btn btn-dark btn-toggle my-3" data-album="<?php echo $album['album_id']; ?>">Voir les chansons</button>
                         <div class="songs" style="display: none;">
