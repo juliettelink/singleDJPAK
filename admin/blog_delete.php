@@ -11,13 +11,13 @@ require_once __DIR__ . "/templates/header.php";
 
 adminOnly();
 
-$single = false;
+$blog = false;
 $errors = [];
 $messages = [];
 if (isset($_GET["id"])) {
-    $single =  getBlogById($pdo, (int)$_GET["id"]);
+    $blog =  getBlogById($pdo, (int)$_GET["id"]);
 }
-if ($single) {
+if ($blog) {
     if (deleteBlog($pdo, $_GET["id"])) {
         $messages[] = "Le blog a bien été supprimé";
         header("Location: blogs.php");

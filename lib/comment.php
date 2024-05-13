@@ -1,5 +1,11 @@
 <?php
-
+function getCommentById(PDO $pdo, int $id): array|bool
+{
+    $query =$pdo->prepare("SELECT * FROM comment_blog WHERE id=:id");
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
 
 function getCommentsByArticleId($pdo, $article_id): array|bool
 {
@@ -27,4 +33,19 @@ function saveComment(PDO $pdo, string $name, string $comment, int $articleId) {
         echo '<div class="alert alert-danger" role="alert">Erreur lors de l\'enregistrement du commentaire : ' . $e->getMessage() . '</div>';
     }
 }
+}
+
+
+function deleteComment(PDO $pdo, int $id):bool
+{
+    
+    $query = $pdo->prepare("DELETE FROM comment_blog WHERE id = :id");
+    $query->bindValue(':id', $id, $pdo::PARAM_INT);
+
+    $query->execute();
+    if ($query->rowCount() > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
