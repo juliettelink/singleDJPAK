@@ -16,7 +16,7 @@
         .catch(error => {
             console.error(error);
         });
-</script>
+    </script>
 
 </body>
 </html>

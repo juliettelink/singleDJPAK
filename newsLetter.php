@@ -5,6 +5,17 @@ require_once __DIR__ . "/lib/session.php";
 require_once __DIR__ . "/lib/pdo.php";
 require_once __DIR__ . "/templates/header.php";
 
+// Vérifier si l'utilisateur est déjà abonné
+if (isset($_SESSION['newsletter_subscribers']) && $_SESSION['newsletter_subscribers'] === true) {
+    // Si l'utilisateur est déjà abonné, afficher un message et éventuellement un bouton de redirection
+    echo '<div class="alert alert-info" role="alert">
+            Vous êtes déjà inscrit à la newsletter !
+          </div>';
+    echo '<a href="album.php" class="btn btn-dark">Accéder aux albums</a>';
+        // Inclure le footer
+        require_once __DIR__ . "/templates/footer_fond.php";
+        exit();
+}
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
@@ -31,24 +42,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
             // Définir la variable de session une fois que l'inscription est réussie
             $_SESSION['newsletter_subscribers'] = true;
 
-
             // Afficher un message de confirmation
             echo '<div class="alert alert-success" role="alert">
-                        Vous avez été inscrit à la newsletter avec succès ! Vous allez étre rediriger vers la page album.
+                        Vous avez été inscrit à la newsletter avec succès ! Vous allez être redirigé vers la page album.
                     </div>';
-                // Rediriger l'utilisateur vers la page music après un délai de 2 secondes
-                header("refresh:2;url=album.php");
+            // Rediriger l'utilisateur vers la page music après un délai de 2 secondes
+            header("refresh:2;url=album.php");
             exit(); // Assurez-vous de terminer le script après la redirection
         } else {
-            // Si l'e-mail est déjà inscrit, afficher un message d'erreur
-            echo '<div class="alert alert-danger" role="alert">
-                    L\'adresse e-mail est déjà inscrite à la newsletter.
-                </div>';
+            // Si l'e-mail est déjà inscrit, 
+            $_SESSION['newsletter_subscribers'] = true;
+            header("Location: album.php");
+            exit();
         }
     }
 }
-
-
 ?>
 <div class="fond">
     <div class="container py-5">
@@ -61,8 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["newsletter_email"])) {
             <button class="btn btn-dark" type="submit">S'inscrire</button>
         </form>
     </div>
-
-
-
 <?php
     require_once __DIR__ . "/templates/footer_fond.php";
+?>

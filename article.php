@@ -96,6 +96,7 @@ $comments = getCommentsByArticleId($pdo, $article_id);
                                 <?php foreach ($comments as $comment) : ?>
                                     <div class="card">
                                         <div class="card-body">
+                                            <p class="card-text"><?= htmlspecialchars($comment['created_at']); ?></p>
                                             <h6 class="card-title"><?= htmlspecialchars($comment['name']); ?></h6>
                                             <p class="card-text"><?= htmlspecialchars($comment['comment']); ?></p>
                                         </div>

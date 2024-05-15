@@ -9,7 +9,7 @@ function getCommentById(PDO $pdo, int $id): array|bool
 
 function getCommentsByArticleId($pdo, $article_id): array|bool
 {
-    $query =$pdo->prepare("SELECT * FROM comment_blog WHERE article_id=:id");
+    $query =$pdo->prepare("SELECT * FROM comment_blog WHERE article_id=:id ORDER BY created_at DESC");
     $query->bindValue(":id", $article_id, PDO::PARAM_INT);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);

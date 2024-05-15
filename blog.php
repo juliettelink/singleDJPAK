@@ -22,8 +22,8 @@ $blogs = getAllBlog($pdo);
         <div class="row">
             <?php foreach ($blogs as $blog) {?>
 
-            <div class="col-md-5 col-sm-5 mb-5 ">
-                <div class="card" style="width: 28rem;">
+            <div class="col-md-4 mb-5 ">
+                <div class="card" style="width: 22rem;">
                     <img src="uploads/blog/<?= $blog['image']; ?>" class="card-img-top" alt="image couverture album">
                     <div class="card-body text-center">
                         <h5 class="card-title"><?= $blog['titre']; ?></h5>
